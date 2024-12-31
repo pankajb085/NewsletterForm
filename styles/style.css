@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, p, body, ul, input {
+  margin: 0;
+}
+
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+.flex, .info-container ul, .info-container, .body-container, main {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #FFF;
+  min-height: 100vh;
+  font-family: RobotoRegular;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #242742;
+}
+
+main {
+  background-color: #FFF;
+}
+
+.img-container picture {
+  border-radius: 0 0 0.5rem 0.5rem;
+  height: 100%;
+}
+.img-container picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body-container {
+  gap: 2.5rem;
+  padding: 2.5rem 1.5rem;
+}
+
+.success-container {
+  padding: 9.25rem 1.5rem 2.5rem;
+  gap: 7rem;
+}
+
+.info-container {
+  gap: 1.5rem;
+}
+.info-container .title {
+  font-size: 2.5rem;
+  font-family: RobotoBold;
+  line-height: 1;
+}
+.info-container .desc span {
+  font-family: RobotoBold;
+}
+.info-container > img {
+  width: 4rem;
+  height: 4rem;
+}
+.info-container ul {
+  gap: 0.625rem;
+}
+.info-container ul li {
+  display: flex;
+  flex-direction: row;
+}
+.info-container ul li img {
+  margin-right: 1rem;
+  align-self: flex-start;
+}
+
+.form-container:has(input:invalid) #email-error {
+  visibility: visible;
+}
+.form-container .label-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-family: RobotoBold;
+  font-size: 0.75rem;
+}
+.form-container .label-info #email-error {
+  visibility: hidden;
+  color: #FF6155;
+}
+.form-container input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #242742;
+  border-radius: 0.5rem;
+}
+.form-container input:first-of-type {
+  margin-bottom: 1.5rem;
+}
+.form-container input:focus {
+  outline: none;
+}
+.form-container input::placeholder {
+  color: #19182B;
+  opacity: 0.25;
+}
+.form-container input:invalid {
+  color: #FF6155;
+  border: 1px solid currentColor;
+  background-color: rgba(255, 97, 85, 0.0823529412);
+}
+.form-container input[type=submit] {
+  cursor: pointer;
+  background-color: #242742;
+  color: #FFF;
+  font-family: RobotoBold;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.form-container input[type=submit]:is(:hover, :active, :focus) {
+  background-color: #FF6155;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: #36384D;
+    display: grid;
+    place-content: center;
+  }
+  main {
+    width: 928px;
+    flex-direction: row-reverse;
+    border-radius: 1rem;
+  }
+  main:has(.success-container) {
+    width: 504px;
+    padding: 4rem;
+  }
+  main:has(.success-container) .body-container, main:has(.success-container) .success-container {
+    padding: 0;
+  }
+  main:has(.success-container) .success-container {
+    gap: 2.5rem;
+  }
+  main:has(.success-container) input[type=submit] {
+    margin: 0;
+  }
+  .img-container {
+    padding: 1.5rem;
+    padding-left: 0;
+  }
+  .img-container picture img {
+    border-radius: 1rem;
+  }
+  .body-container {
+    padding: 6rem 4rem;
+  }
+  .info-container .title {
+    font-size: 3.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
